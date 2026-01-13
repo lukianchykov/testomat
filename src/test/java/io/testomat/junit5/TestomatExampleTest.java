@@ -2,6 +2,7 @@ package io.testomat.junit5;
 
 import io.testomat.junit5.annotations.TestId;
 import io.testomat.junit5.annotations.Title;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -50,4 +51,20 @@ public class TestomatExampleTest {
         String message = "Hello, Testomat.io!";
         assertTrue(message.contains("Testomat"), "Message should contain 'Testomat'");
     }
+
+    @Test
+    @Disabled("Skipped for demonstration purposes")
+    @TestId("T12350")
+    @Title("Skipped test example")
+    void testSkipped() {
+        fail("This test should be skipped and never executed");
+    }
+
+//    @Test
+//    @TestId("T12349")
+//    @Title("Intentionally failing test")
+//    void testFailure() {
+//        int result = 2 + 2;
+//        assertEquals(5, result, "This test is expected to fail");
+//    }
 }
